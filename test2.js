@@ -6,10 +6,15 @@
  * Iterate the colorsArray and for each color in the array, console.log "Hello World" in that color using Chalk.
  */
 
-let colorsArray = [
-    'green',
-    'blue',
-    'red',
-];
+// Importing module
+const chalk = require('chalk');
+let colorsArray = ['green', 'blue', 'red'];
 
-// your code goes here
+const colorsArr = (colorsArray) => {
+  colorsArray.map((color) => {
+    console.log(chalk.keyword(color)('Hello World'));
+  });
+  return colorsArray;
+};
+
+console.log(colorsArr(colorsArray));

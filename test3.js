@@ -5,3 +5,13 @@
 
 // your code goes here
 
+const fse = require('fs-extra');
+
+fse
+  .outputFile('./test.txt', 'Hello world!')
+  .then(() => {
+    console.log('The file has been saved!');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
