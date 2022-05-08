@@ -13,3 +13,8 @@
 # - List all of the products and concatenate the usernames of the users who bought it
 #   (Expected output: product_id, product_name, usernames) (usernames = john@packwire.com,phil@packwire.com)
 
+SELECT products.product_id, products.product_name, 
+GROUP_CONCAT ( users.username ) AS "usernames"
+FROM products
+INNER JOIN orders ON products.id = orders.product_id
+INNER JOIN users ON orders.user_id = users.user_id;
