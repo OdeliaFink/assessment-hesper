@@ -9,6 +9,11 @@
 # - List all the users and sum their total life order amounts
 #   (Expected output: user_id, username, lifetime_order_amount)
 
+SELECT users.user_id, users.user_name, SUM(orders.order_amount) AS "lifetime_order_amount"
+FROM users
+INNER JOIN orders ON users.user_id = orders.user_id
+GROUP BY users.user_id;
+
 #
 # - List all of the products and concatenate the usernames of the users who bought it
 #   (Expected output: product_id, product_name, usernames) (usernames = john@packwire.com,phil@packwire.com)
